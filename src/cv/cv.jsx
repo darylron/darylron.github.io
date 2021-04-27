@@ -182,8 +182,8 @@ function Education(props) {
                 <Card.Title>Education</Card.Title>
                 <Card.Text>
 
-                    <h7>Bachelor of Science in Information Technology</h7>
-                    <h7>Institute of Information Technology</h7>
+                    <h7>Bachelor of Science in Information Technology</h7><br />
+                    <h7>Institute of Information Technology</h7><br />
                     <h7>Don Mariano Marcos Memorial State University, San Fernando, La Union</h7>
 
                 </Card.Text>
