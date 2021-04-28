@@ -105,22 +105,22 @@ const references = [
         name: 'Toni Barretto',
         company: 'Google FTE (former Concentrix)',
         relation: 'Former colleage and client',
-        mobile: '+63 91781 51198',
-        email: 'lbarretto@google.com',
+        mobile: '+63 *** *** 1198',
+        email: 'l*****@google.com',
     },
     {
         name: 'Gina Galang',
         company: 'Willis Towers Watson',
         relation: 'Former colleage/team mate',
         mobile: '-',
-        email: 'gin.galang@willistowerswatson.com',
+        email: 'g*******@willistowerswatson.com',
     },
     {
         name: 'Joel Cabral',
         company: 'Eastvantage',
         relation: 'Team lead',
-        mobile: '+63 917 564 1052',
-        email: 'joelilaocabral@gmail.com',
+        mobile: '+63 *** *** 1052',
+        email: 'joel****@gmail.com',
     }
 ]
 
@@ -131,7 +131,7 @@ function Header(props) {
             <Card.Text>
                 <small>Fullstack Software Engineer</small><br />
                 <small>✉ <a href="mailto:darylron@gmail.com">darylron@gmail.com</a></small>
-                <br /><small>✆ +6392 658 4446</small>
+                <br /><small>✆ +63 926 658 4446</small>
             </Card.Text>
         </Card.Body>
     </Card >
@@ -142,20 +142,20 @@ class Experience extends Component {
     render() {
         let achievementLabel = ''
         if (this.props.achievements.length) {
-            achievementLabel = 'Achievements;';
+            achievementLabel = 'Achievements';
         }
         return (
             <Card className="m-2" style={{ 'text-align': "left" }}>
                 <Card.Body>
-                    <Card.Title>{this.props.company} - {this.props.daterange}</Card.Title>
+                    <Card.Title>{this.props.position} @ {this.props.company} - {this.props.daterange}</Card.Title>
                     <Card.Text>
-                        <h5>Responsibilities</h5>
+                        <h7>Responsibilities</h7>
                         <ul>
                             {this.props.responsibilities.map(res => (
                                 <li>{res}</li>
                             ))}
                         </ul>
-                        <h5>{achievementLabel}</h5>
+                        <h7>{achievementLabel}</h7>
                         <ul>
                             {this.props.achievements.map(ach => (
                                 <li>{ach}</li>
@@ -163,7 +163,7 @@ class Experience extends Component {
                         </ul>
 
                         <small>
-                            <span>Tech Stack: &nbsp;</span>
+                            <span>Tech stack: &nbsp;</span>
                             {this.props.technologies.map(res => (
                                 <span>{res}</span>
                             ))}
@@ -179,9 +179,8 @@ function Education(props) {
     return (
         <Card className="m-2" style={{ 'text-align': "left" }}>
             <Card.Body>
-                <Card.Title>Education</Card.Title>
+                <Card.Title>Education ✍</Card.Title>
                 <Card.Text>
-
                     <h7>Bachelor of Science in Information Technology</h7><br />
                     <h7>Institute of Information Technology</h7><br />
                     <h7>Don Mariano Marcos Memorial State University, San Fernando, La Union</h7>
