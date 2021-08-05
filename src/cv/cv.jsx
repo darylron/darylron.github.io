@@ -4,8 +4,23 @@ import Card from 'react-bootstrap/Card';
 
 const experiences = [
     {
+        company: 'Anihan, Inc (Personal project)',
+        daterange: 'Oct 2020 - Present',
+        position: 'Software Engineer',
+        responsibilities: [
+            'Support and maintenance',
+            'Supply Chain Manager',
+            'Software Engineer',
+            'Research and Design'
+
+        ],
+        achievements: [],
+        technologies: ['Django', 'Serverless', 'DigitalOcean', 'AWS S3', 'Docker', 'Kubernetes', 'Minikube']
+
+    },
+    {
         company: 'Concentrix',
-        daterange: 'Jan 2020 - Present',
+        daterange: 'Jan 2020 - July 2021',
         position: 'Sr. Software Engineer',
         responsibilities: [
             'Support and maintenance',
@@ -15,7 +30,11 @@ const experiences = [
             'Google Internal tool',
 
         ],
-        achievements: [],
+        achievements: [            
+            'Created a reporting system that sends notifications regarding Google’s internal network availability and failures.',
+            'Created a system that calculates NetEng’s SLO and KPI, and network availability of the GFiber network.',
+            'Borg jobs (or Kubernetes jobs) that collates and transforms data, and exposes it to the clients.'
+        ],
         technologies: ['BigQuery, Google AppEngine, MySQL, Protobuffs, Go Language, Python, Pandas, RPC']
 
     },
@@ -132,6 +151,16 @@ function Header(props) {
                 <small>Fullstack Software Engineer</small><br />
                 <small>✉ <a href="mailto:darylron@gmail.com">darylron@gmail.com</a></small>
                 <br /><small>✆ +63 926 658 4446</small>
+                <br/>
+                <br/>
+                <p>
+                    Full-stack software developer with extensive knowledge in web development, database warehousing, data pipelining, and big data ETL.
+                </p>
+                <ul>
+                    <li>First hand experience in dealing with <i>millions of data</i>: extraction from different data sources (devices, databases, configurations), transforming it into user readable data format (SLO computation, KPI, and others) via tools like Pandas, Google Collaboratory, humanizing it by hosting it via Google Datastudio, custom displays like a website hosted using Google Cloud Platform.</li>
+                    <li>Understanding with <i>Service Oriented Architecture</i> - for the last ~5 years, I've worked with multiple systems (or services) deployed in Borg (Kubernetes) which scales based on need. Coded a lot of scheduled scripts: system status notifier, ETL scripts, data dumps, APIs.</li>
+                    <li>Project management from ideation, brainstorming, creating proof-of-concepts, product requirements documents, task Gantt charts, sprint planning, to finally doing test documentations, and support and maintenance.</li>
+                </ul>
             </Card.Text>
         </Card.Body>
     </Card >
