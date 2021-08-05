@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/darylron.github.io/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/darylron.github.io/static/js/main.c249ccfd.chunk.js",
-    "main.js.map": "/darylron.github.io/static/js/main.c249ccfd.chunk.js.map",
+    "main.js": "/darylron.github.io/static/js/main.bff7b3dc.chunk.js",
+    "main.js.map": "/darylron.github.io/static/js/main.bff7b3dc.chunk.js.map",
     "runtime-main.js": "/darylron.github.io/static/js/runtime-main.69bbc8f3.js",
     "runtime-main.js.map": "/darylron.github.io/static/js/runtime-main.69bbc8f3.js.map",
     "static/js/2.7f509a51.chunk.js": "/darylron.github.io/static/js/2.7f509a51.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.69bbc8f3.js",
     "static/js/2.7f509a51.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.c249ccfd.chunk.js"
+    "static/js/main.bff7b3dc.chunk.js"
   ]
 }
