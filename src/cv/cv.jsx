@@ -27,7 +27,6 @@ const experiences = [
             'Web development',
             'Database warehousing',
             'Data analytics, forecasting',
-            'Google Internal tool',
 
         ],
         achievements: [            
@@ -61,7 +60,6 @@ const experiences = [
             'Web development',
             'Database warehousing',
             'Data analytics, forecasting',
-            'Google Internal tool',
 
         ],
         achievements: [
@@ -87,12 +85,10 @@ const experiences = [
             'Support and maintenance',
             'Web development',
             'Database warehousing',
-            'ERP System (OpenERP/Odoo Framework)',
-            'Support and maintenance',
 
         ],
         achievements: [
-            'Created a system that merges a centralized ERP System with other standalone ERP systems by merging their transactions.',
+            'Created a system that merges a centralized ERP System (OpenERP/Odoo Framework) with other standalone ERP systems by merging their transactions.',
             'Conducted a 2-day seminar on how to create an ERP system from the ground up  with OpenERP'
 
         ],
@@ -148,18 +144,25 @@ function Header(props) {
         <Card.Body>
             <Card.Title>Daryl Ronquillo</Card.Title>
             <Card.Text>
-                <small>Fullstack Software Engineer</small><br />
-                <small>✉ <a href="mailto:darylron@gmail.com">darylron@gmail.com</a></small>
+                <small>Software Engineer</small><br />
+                <small>✉ <a href="mailto:darylron@gmail.com">darylron@gmail.com</a></small><br />
+                <small>
+                    <b>In</b>&nbsp;
+                    <a href="https://www.linkedin.com/in/daryl-ronquillo-93921258/" target="_blank">
+                        LinkendIn
+                    </a>
+                </small>
                 <br /><small>✆ +63 926 658 4446</small>
                 <br/>
                 <br/>
                 <p>
-                    Full-stack software developer with extensive knowledge in web development, database warehousing, data pipelining, and big data ETL.
+                    <h4>Summary</h4>
+                    Software Engineer with hands-on experience with web applications, database warehousing, data pipelining, and big data ETL.
                 </p>
                 <ul>
+                    <li>Project management from ideation, brainstorming, creating proof-of-concepts, product requirements documents, task Gantt charts, sprint planning, to finally doing test documentations, and support and maintenance.</li>
                     <li>First hand experience in dealing with <i>millions of data</i>: extraction from different data sources (devices, databases, configurations), transforming it into user readable data format (SLO computation, KPI, and others) via tools like Pandas, Google Collaboratory, humanizing it by hosting it via Google Datastudio, custom displays like a website hosted using Google Cloud Platform.</li>
                     <li>Understanding with <i>Service Oriented Architecture</i> - for the last ~5 years, I've worked with multiple systems (or services) deployed in Borg (Kubernetes) which scales based on need. Coded a lot of scheduled scripts: system status notifier, ETL scripts, data dumps, APIs.</li>
-                    <li>Project management from ideation, brainstorming, creating proof-of-concepts, product requirements documents, task Gantt charts, sprint planning, to finally doing test documentations, and support and maintenance.</li>
                 </ul>
             </Card.Text>
         </Card.Body>
