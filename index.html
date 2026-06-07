@@ -1,1 +1,1161 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/darylron.github.io/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/darylron.github.io/logo192.png"/><link rel="manifest" href="/darylron.github.io/manifest.json"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/><title>Daryl Ronquillo</title><link href="/darylron.github.io/static/css/main.796c4995.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,a,i=r[0],c=r[1],l=r[2],s=0,p=[];s<i.length;s++)a=i[s],Object.prototype.hasOwnProperty.call(o,a)&&o[a]&&p.push(o[a][0]),o[a]=0;for(n in c)Object.prototype.hasOwnProperty.call(c,n)&&(e[n]=c[n]);for(f&&f(r);p.length;)p.shift()();return u.push.apply(u,l||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,i=1;i<t.length;i++){var c=t[i];0!==o[c]&&(n=!1)}n&&(u.splice(r--,1),e=a(a.s=t[0]))}return e}var n={},o={1:0},u=[];function a(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,a),t.l=!0,t.exports}a.e=function(e){var r=[],t=o[e];if(0!==t)if(t)r.push(t[2]);else{var n=new Promise((function(r,n){t=o[e]=[r,n]}));r.push(t[2]=n);var u,i=document.createElement("script");i.charset="utf-8",i.timeout=120,a.nc&&i.setAttribute("nonce",a.nc),i.src=function(e){return a.p+"static/js/"+({}[e]||e)+"."+{3:"da5ec2af"}[e]+".chunk.js"}(e);var c=new Error;u=function(r){i.onerror=i.onload=null,clearTimeout(l);var t=o[e];if(0!==t){if(t){var n=r&&("load"===r.type?"missing":r.type),u=r&&r.target&&r.target.src;c.message="Loading chunk "+e+" failed.\n("+n+": "+u+")",c.name="ChunkLoadError",c.type=n,c.request=u,t[1](c)}o[e]=void 0}};var l=setTimeout((function(){u({type:"timeout",target:i})}),12e4);i.onerror=i.onload=u,document.head.appendChild(i)}return Promise.all(r)},a.m=e,a.c=n,a.d=function(e,r,t){a.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},a.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},a.t=function(e,r){if(1&r&&(e=a(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(a.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)a.d(t,n,function(r){return e[r]}.bind(null,n));return t},a.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return a.d(r,"a",r),r},a.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},a.p="/darylron.github.io/",a.oe=function(e){throw console.error(e),e};var i=this.webpackJsonpme=this.webpackJsonpme||[],c=i.push.bind(i);i.push=r,i=i.slice();for(var l=0;l<i.length;l++)r(i[l]);var f=c;t()}([])</script><script src="/darylron.github.io/static/js/2.304ca52a.chunk.js"></script><script src="/darylron.github.io/static/js/main.78160d64.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daryl M. Ronquillo — Fullstack Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:         #f8f9fc;
+  --white:      #ffffff;
+  --surface:    #f1f3f8;
+  --border:     #e4e8f0;
+  --border2:    #d0d6e4;
+  --navy:       #1a2744;
+  --navy-mid:   #2d4178;
+  --blue:       #2563eb;
+  --blue-light: #3b82f6;
+  --blue-pale:  #eff4ff;
+  --blue-pale2: #dbeafe;
+  --text:       #1e2a3a;
+  --text-mid:   #4a5568;
+  --text-dim:   #8a96a8;
+  --text-muted: #b8c0cc;
+  --gold:       #d97706;
+  --gold-pale:  #fef3c7;
+  --green:      #059669;
+  --green-pale: #d1fae5;
+  --shadow-sm:  0 1px 3px rgba(26,39,68,0.06), 0 1px 2px rgba(26,39,68,0.04);
+  --shadow-md:  0 4px 16px rgba(26,39,68,0.08), 0 2px 6px rgba(26,39,68,0.05);
+  --shadow-lg:  0 12px 40px rgba(26,39,68,0.12), 0 4px 12px rgba(26,39,68,0.06);
+}
+
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* subtle dot grid */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: radial-gradient(circle, #c8d0e0 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.45;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ══════════════════════
+   HERO
+══════════════════════ */
+.hero {
+  position: relative;
+  background: var(--navy);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* animated geometric accent */
+.hero-geo {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-geo::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 65%);
+  right: -150px; top: -200px;
+  animation: geoFloat 10s ease-in-out infinite alternate;
+}
+.hero-geo::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 65%);
+  left: 10%; bottom: -100px;
+  animation: geoFloat 14s ease-in-out infinite alternate-reverse;
+}
+@keyframes geoFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(20px, -30px) scale(1.08); }
+}
+
+/* diagonal stripe accent */
+.hero-stripe {
+  position: absolute;
+  top: 0; right: 0;
+  width: 45%; height: 100%;
+  background: linear-gradient(135deg, transparent 40%, rgba(37,99,235,0.12) 100%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative; z-index: 2;
+  padding: 72px 8vw 68px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: end;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #93c5fd;
+  margin-bottom: 22px;
+  animation: heroFade 0.7s ease both;
+}
+.hero-badge::before {
+  content: '';
+  width: 22px; height: 2px;
+  background: #3b82f6;
+}
+
+.hero-name {
+  font-family: 'Lora', serif;
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  animation: heroFade 0.7s 0.08s ease both;
+}
+.hero-name span {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #60a5fa;
+  display: block;
+}
+
+.hero-tagline {
+  font-size: 15px; font-weight: 400;
+  color: #93c5fd;
+  max-width: 500px; line-height: 1.8;
+  margin-bottom: 36px;
+  animation: heroFade 0.7s 0.16s ease both;
+}
+
+.hero-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  animation: heroFade 0.7s 0.24s ease both;
+}
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.03em;
+  color: #bfdbfe;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 15px;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.hero-pill:hover {
+  background: rgba(59,130,246,0.2);
+  border-color: #60a5fa;
+  color: #fff;
+}
+.hero-pill svg { width: 13px; height: 13px; fill: currentColor; flex-shrink: 0; }
+
+/* right side: available badge */
+.hero-right {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 12px;
+  animation: heroFade 0.7s 0.3s ease both;
+}
+.available-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(5,150,105,0.15);
+  border: 1px solid rgba(5,150,105,0.35);
+  padding: 8px 16px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #6ee7b7;
+  backdrop-filter: blur(4px);
+}
+.available-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: blink 2s ease infinite;
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.exp-callout {
+  font-family: 'Lora', serif;
+  font-size: 13px; font-style: italic;
+  color: #6b8cb8;
+  text-align: right; line-height: 1.5;
+}
+
+/* hero bottom bar */
+.hero-bar {
+  position: relative; z-index: 2;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 8vw;
+  display: flex; gap: 40px;
+  background: rgba(0,0,0,0.15);
+}
+.hero-stat {
+  display: flex; align-items: baseline; gap: 6px;
+}
+.hero-stat-num {
+  font-family: 'Lora', serif;
+  font-size: 22px; font-weight: 700;
+  color: #fff;
+}
+.hero-stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: #6b8cb8;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ══════════════════════
+   PAGE LAYOUT
+══════════════════════ */
+.page {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+/* ══════════════════════
+   SIDEBAR
+══════════════════════ */
+.sidebar {
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 52px 36px;
+  position: sticky; top: 0;
+  height: 100vh; overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar::-webkit-scrollbar { display: none; }
+
+.sb-sec { margin-bottom: 44px; }
+
+.sb-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; font-weight: 500;
+  letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 8px;
+}
+.sb-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--border2);
+}
+
+/* Stat grid */
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 14px 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.stat-card:hover { border-color: var(--blue-light); box-shadow: var(--shadow-sm); }
+.stat-num {
+  font-family: 'Lora', serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--navy);
+  line-height: 1; margin-bottom: 4px;
+}
+.stat-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Skills */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 5px; }
+.skill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.02em;
+  color: var(--navy-mid);
+  background: var(--blue-pale);
+  border: 1px solid var(--blue-pale2);
+  padding: 4px 10px;
+  transition: all 0.18s; cursor: default;
+}
+.skill:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* Education */
+.edu-deg {
+  font-family: 'Lora', serif;
+  font-size: 14px; font-weight: 600;
+  color: var(--navy); line-height: 1.4;
+  margin-bottom: 6px;
+}
+.edu-school {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--text-dim);
+  line-height: 1.75; letter-spacing: 0.02em;
+}
+
+/* Location */
+.loc {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--text-mid); line-height: 1.6;
+}
+.loc svg { width: 14px; height: 14px; fill: var(--blue); flex-shrink: 0; margin-top: 2px; }
+
+/* ══════════════════════
+   MAIN
+══════════════════════ */
+.main { padding: 56px 60px 80px; background: var(--bg); }
+
+.section { margin-bottom: 60px; }
+
+.sec-head {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 36px;
+}
+.sec-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--blue);
+  letter-spacing: 0.12em; font-weight: 500;
+}
+.sec-title {
+  font-family: 'Lora', serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--navy); letter-spacing: -0.4px;
+}
+.sec-rule { flex: 1; height: 1px; background: var(--border2); }
+
+/* Profile card */
+.profile-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+}
+.profile-card p {
+  font-size: 14.5px; line-height: 1.85;
+  color: var(--text-mid);
+}
+
+/* ── TIMELINE ── */
+.timeline { position: relative; padding-left: 28px; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 0; top: 10px; bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--blue), var(--border2) 85%, transparent);
+}
+
+.job {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 28px 28px 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+}
+.job:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-light);
+  transform: translateX(3px);
+}
+.job:last-child { margin-bottom: 0; }
+
+/* timeline dot */
+.job::before {
+  content: '';
+  position: absolute; left: -34px; top: 30px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--white);
+  border: 2.5px solid var(--blue);
+  box-shadow: 0 0 0 3px var(--bg);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.job:hover::before {
+  background: var(--blue);
+  box-shadow: 0 0 0 3px var(--bg), 0 0 10px rgba(37,99,235,0.4);
+}
+
+.job-top {
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 16px;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.job-title {
+  font-family: 'Lora', serif;
+  font-size: 19px; font-weight: 700;
+  color: var(--navy); line-height: 1.25;
+  margin-bottom: 3px;
+}
+.job-company {
+  font-size: 12px; font-weight: 600;
+  color: var(--blue); letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.job-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.04em;
+  color: var(--text-mid);
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  padding: 5px 12px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.job-badge.current {
+  background: var(--green-pale);
+  border-color: #6ee7b7;
+  color: var(--green);
+  font-weight: 500;
+}
+
+.job-desc {
+  font-size: 13.5px; color: var(--text-mid);
+  line-height: 1.75; margin-bottom: 14px;
+}
+
+.achievements { list-style: none; margin-bottom: 14px; }
+.achievements li {
+  font-size: 13px; color: var(--text);
+  padding: 7px 0 7px 18px;
+  position: relative; line-height: 1.6;
+  border-bottom: 1px solid var(--border);
+}
+.achievements li:last-child { border-bottom: none; }
+.achievements li::before {
+  content: '';
+  position: absolute; left: 0; top: 50%;
+  width: 8px; height: 2px;
+  background: var(--blue); transform: translateY(-50%);
+}
+
+.awards { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.award {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-pale);
+  border: 1px solid #fcd34d;
+  padding: 4px 10px;
+}
+
+.job-tech {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+.job-tech span { color: var(--border2); margin: 0 3px; }
+
+/* ══════════════════════
+   FOOTER
+══════════════════════ */
+footer {
+  position: relative; z-index: 1;
+  background: var(--navy);
+  padding: 28px 8vw;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.footer-brand {
+  font-family: 'Lora', serif;
+  font-size: 17px; font-weight: 700; color: #fff;
+}
+.footer-brand span { color: #60a5fa; }
+.footer-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; color: #4a6080;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+
+/* ══════════════════════
+   CHAT BUTTON
+══════════════════════ */
+#chat-trigger {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 56px; height: 56px;
+  background: var(--blue);
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 50%;
+  animation: chatPulse 3s ease infinite;
+}
+@keyframes chatPulse {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,99,235,0.45); }
+  50%      { box-shadow: 0 4px 28px rgba(37,99,235,0.7), 0 0 0 8px rgba(37,99,235,0.08); }
+}
+#chat-trigger:hover { transform: scale(1.07); animation: none; box-shadow: 0 6px 28px rgba(37,99,235,0.6); }
+#chat-trigger svg { width: 22px; height: 22px; fill: #fff; }
+#chat-trigger .close-icon { display: none; }
+#chat-trigger.open .chat-icon { display: none; }
+#chat-trigger.open .close-icon { display: block; }
+#chat-trigger.open { background: var(--surface); border: 1px solid var(--border2); animation: none; box-shadow: var(--shadow-md); }
+#chat-trigger.open svg { fill: var(--text-mid); }
+
+/* ══════════════════════
+   CHAT PANEL
+══════════════════════ */
+#chat-panel {
+  position: fixed; bottom: 100px; right: 30px;
+  width: 400px; max-height: 580px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  display: flex; flex-direction: column;
+  z-index: 999;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.93) translateY(14px);
+  opacity: 0; pointer-events: none;
+  transform-origin: bottom right;
+  transition: transform 0.28s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s ease;
+  overflow: hidden;
+}
+#chat-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+
+.chat-hdr {
+  padding: 16px 20px;
+  background: var(--navy);
+  display: flex; align-items: center; gap: 12px;
+  flex-shrink: 0;
+}
+.chat-av {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 16px; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.chat-hdr-name { font-size: 13px; font-weight: 600; color: #fff; }
+.chat-hdr-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #6b8cb8; margin-top: 2px;
+}
+.chat-online {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 6px #34d399;
+  margin-left: auto; flex-shrink: 0;
+}
+
+.chat-msgs {
+  flex: 1; overflow-y: auto;
+  padding: 20px 16px;
+  display: flex; flex-direction: column; gap: 14px;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+  background: var(--bg);
+}
+.chat-msgs::-webkit-scrollbar { width: 4px; }
+.chat-msgs::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.msg { display: flex; gap: 10px; animation: msgIn 0.3s ease both; }
+@keyframes msgIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.msg.user { flex-direction: row-reverse; }
+
+.msg-av {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Lora', serif;
+  font-size: 13px; font-weight: 700; color: var(--blue);
+  flex-shrink: 0; margin-top: 2px;
+}
+.msg.user .msg-av { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+.msg-bub {
+  max-width: 78%; padding: 11px 15px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px 12px 12px 2px;
+  font-size: 13px; line-height: 1.7; color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.msg.user .msg-bub {
+  background: var(--blue); border-color: var(--blue);
+  color: #fff; border-radius: 12px 12px 2px 12px;
+}
+
+/* typing */
+.typing-dots { display: flex; gap: 5px; align-items: center; padding: 4px 2px; }
+.typing-dots span {
+  width: 6px; height: 6px; background: var(--text-muted);
+  border-radius: 50%; animation: dot 1.2s infinite ease-in-out;
+}
+.typing-dots span:nth-child(2) { animation-delay: .2s; }
+.typing-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes dot { 0%,80%,100% { transform:scale(0.7);opacity:0.4; } 40% { transform:scale(1);opacity:1; } }
+
+/* chips */
+.chips { padding: 10px 16px 6px; display: flex; flex-wrap: wrap; gap: 6px; background: var(--white); border-top: 1px solid var(--border); }
+.chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.03em;
+  color: var(--blue);
+  background: var(--blue-pale);
+  border: 1px solid var(--blue-pale2);
+  padding: 5px 12px; border-radius: 100px;
+  cursor: pointer; transition: all 0.18s;
+}
+.chip:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+/* input row */
+.chat-input-row {
+  padding: 12px 14px;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 8px; align-items: flex-end;
+  background: var(--white);
+}
+#chat-input {
+  flex: 1; background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px; color: var(--text);
+  resize: none; min-height: 40px; max-height: 100px;
+  outline: none; line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#chat-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+#chat-input::placeholder { color: var(--text-muted); }
+#chat-send {
+  width: 38px; height: 38px;
+  background: var(--blue); border: none; border-radius: 10px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background 0.2s, transform 0.1s;
+}
+#chat-send:hover { background: #1d4ed8; }
+#chat-send:active { transform: scale(0.95); }
+#chat-send:disabled { background: var(--border2); cursor: not-allowed; }
+#chat-send svg { width: 16px; height: 16px; fill: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .page { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+  .main { padding: 36px 24px 60px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-right { align-items: flex-start; }
+  .hero-bar { gap: 24px; flex-wrap: wrap; }
+  footer { padding: 20px 24px; }
+  #chat-panel { width: calc(100vw - 20px); right: 10px; bottom: 88px; }
+  #chat-trigger { right: 16px; bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-geo"></div>
+  <div class="hero-stripe"></div>
+
+  <div class="hero-inner">
+    <div>
+      <p class="hero-badge">Fullstack Software Engineer</p>
+      <h1 class="hero-name">
+        Daryl M.<br><span>Ronquillo</span>
+      </h1>
+      <p class="hero-tagline">
+        13+ years building scalable web applications, data pipelines, and cloud infrastructure — across Google, Concentrix, Hexaware, and more.
+      </p>
+      <div class="hero-pills">
+        <a class="hero-pill" href="tel:+639266584446">
+          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          +63 926 658 4446
+        </a>
+        <a class="hero-pill" href="mailto:darylron@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          darylron@gmail.com
+        </a>
+        <a class="hero-pill" href="https://ph.linkedin.com/pub/daryl-ronquillo/58/212/939/" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H6.5v-7H9v7zM7.7 8.7c-.8 0-1.3-.5-1.3-1.2s.5-1.2 1.3-1.2 1.3.5 1.3 1.2-.5 1.2-1.3 1.2zM18 17h-2.4v-3.8c0-1-.8-1.8-1.8-1.8s-1.8.8-1.8 1.8V17H9.6v-7H12v1c.5-.8 1.5-1.3 2.4-1.3 1.9 0 3.6 1.6 3.6 3.5V17z"/></svg>
+          LinkedIn
+        </a>
+        <span class="hero-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Pampanga, Philippines
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="available-badge">
+        <div class="available-dot"></div>
+        Open to Opportunities
+      </div>
+      <div class="exp-callout">Technical Lead<br>since Jan 2022</div>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <div class="hero-stat">
+      <div class="hero-stat-num">13+</div>
+      <div class="hero-stat-lbl">Years Experience</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">7</div>
+      <div class="hero-stat-lbl">Companies</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">5+</div>
+      <div class="hero-stat-lbl">Awards</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">20+</div>
+      <div class="hero-stat-lbl">Technologies</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PAGE BODY ══ -->
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sb-sec reveal">
+      <p class="sb-label">Quick Stats</p>
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-num">13+</div>
+          <div class="stat-lbl">Yrs. Exp.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">7</div>
+          <div class="stat-lbl">Companies</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">5+</div>
+          <div class="stat-lbl">Awards</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">20+</div>
+          <div class="stat-lbl">Technologies</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-sec reveal">
+      <p class="sb-label">Technologies</p>
+      <div class="skills-wrap">
+        <span class="skill">JavaScript</span>
+        <span class="skill">Go</span>
+        <span class="skill">Python</span>
+        <span class="skill">PHP</span>
+        <span class="skill">TypeScript</span>
+        <span class="skill">BigQuery</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">PostgreSQL</span>
+        <span class="skill">Redis</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">AngularJS</span>
+        <span class="skill">Django</span>
+        <span class="skill">CakePHP</span>
+        <span class="skill">Odoo</span>
+        <span class="skill">GCP</span>
+        <span class="skill">Docker</span>
+        <span class="skill">Terraform</span>
+        <span class="skill">Github Actions</span>
+        <span class="skill">AppEngine</span>
+        <span class="skill">Protobuffs</span>
+      </div>
+    </div>
+
+    <div class="sb-sec reveal">
+      <p class="sb-label">Education</p>
+      <div class="edu-deg">B.S. Information Technology</div>
+      <div class="edu-school">
+        Don Mariano Marcos Memorial<br>
+        State University<br>
+        Institute of Information Technology<br>
+        San Fernando, La Union
+      </div>
+    </div>
+
+    <div class="sb-sec reveal">
+      <p class="sb-label">Location</p>
+      <div class="loc">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        San Fernando, Pampanga<br>Philippines
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- PROFILE -->
+    <section class="section reveal">
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Profile</h2>
+        <div class="sec-rule"></div>
+      </div>
+      <div class="profile-card">
+        <p>Engineer spanning the full product lifecycle — from ideation and proof-of-concepts to sprint planning, test documentation, and post-launch support. Specialized in systems that handle millions of data points: extraction across heterogeneous sources, transformation via Pandas and BigQuery, and delivery through custom GCP-hosted dashboards and APIs. Proven experience setting up cloud infrastructure as code via Terraform.</p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Work Experience</h2>
+        <div class="sec-rule"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Technical Lead</div>
+              <div class="job-company">Hexaware Technologies</div>
+            </div>
+            <div class="job-badge current">Jan 2022 — Present</div>
+          </div>
+          <p class="job-desc">Reviews system requirements and business processes; codes, tests, debugs, and implements software solutions. Operates as a generalist across UX/design, DevOps, and programming within the IT Development Function.</p>
+          <div class="job-tech">Python <span>·</span> Go <span>·</span> Angular <span>·</span> TypeScript <span>·</span> GCP</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Sr. Software Engineer L4</div>
+              <div class="job-company">FPT Software Philippines, Inc.</div>
+            </div>
+            <div class="job-badge">Sept 2021 — Jan 2022</div>
+          </div>
+          <p class="job-desc">Research and design, software development and maintenance. Full-stack generalist role within the IT Development Function.</p>
+          <div class="job-tech">Python <span>·</span> Jira <span>·</span> Android <span>·</span> New Relic</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Sr. Software Engineer</div>
+              <div class="job-company">Concentrix</div>
+            </div>
+            <div class="job-badge">Jan 2020 — July 2021</div>
+          </div>
+          <ul class="achievements">
+            <li>Developed reporting system for Google's internal network failure notifications</li>
+            <li>Created system computing NetEng SLO/KPI and GFiber network availability</li>
+            <li>Built BorgJobs (Kubernetes) to collate and expose data to clients</li>
+            <li>Designed chatbot predicting user input and surfacing contextual GFiber data</li>
+          </ul>
+          <div class="job-tech">BigQuery <span>·</span> AppEngine <span>·</span> MySQL <span>·</span> Protobuffs <span>·</span> Go <span>·</span> Python <span>·</span> Pandas <span>·</span> RPC</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Software Engineer</div>
+              <div class="job-company">Willis Towers Watson</div>
+            </div>
+            <div class="job-badge">June 2019 — Dec 2019</div>
+          </div>
+          <p class="job-desc">Designed, developed, and implemented short- and long-term IT solutions across systems architecture, network infrastructure, and application development. Full ownership from requirements through to deployment.</p>
+          <div class="job-tech">Django <span>·</span> Docker <span>·</span> Jenkins</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">Software Engineer</div>
+              <div class="job-company">Concentrix</div>
+            </div>
+            <div class="job-badge">Dec 2016 — May 2019</div>
+          </div>
+          <ul class="achievements">
+            <li>Developed network failure notification reporting system for Google</li>
+            <li>Built forecasting system for Google network utilization and YouTube watchtime</li>
+            <li>Created employee–manager org-chart dashboard on Google Maps canvas</li>
+            <li>Built proactive monitoring alerting developers to Google AppEngine errors</li>
+            <li>Designed system for automated website testing</li>
+          </ul>
+          <div class="awards">
+            <span class="award">★ 2018 Originator's Award</span>
+            <span class="award">★ 2017 Duck Tape Award</span>
+          </div>
+          <div class="job-tech">BigQuery <span>·</span> AppEngine <span>·</span> MySQL <span>·</span> Protobuffs <span>·</span> Go <span>·</span> Python <span>·</span> Pandas <span>·</span> RPC</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">ERP Developer</div>
+              <div class="job-company">Auberon Solutions, Inc.</div>
+            </div>
+            <div class="job-badge">Feb 2016 — Dec 2016</div>
+          </div>
+          <ul class="achievements">
+            <li>Merged centralized ERP with standalone ERP systems by unifying transactions</li>
+            <li>Conducted 2-day seminar on building an ERP system from scratch with OpenERP</li>
+          </ul>
+          <div class="job-tech">Odoo <span>·</span> OpenERP <span>·</span> Python</div>
+        </div>
+
+        <div class="job reveal">
+          <div class="job-top">
+            <div>
+              <div class="job-title">System Developer</div>
+              <div class="job-company">Eastvantage</div>
+            </div>
+            <div class="job-badge">May 2012 — Dec 2015</div>
+          </div>
+          <ul class="achievements">
+            <li>Built dynamic web apps as user-friendly frontends for complex OpenERP system</li>
+            <li>Created a technician dispatchment dashboard</li>
+          </ul>
+          <div class="awards">
+            <span class="award">★ 3× Employee of the Month</span>
+            <span class="award">★ 2014 Performance Awardee</span>
+          </div>
+          <div class="job-tech">OpenERP <span>·</span> Web Development</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Daryl M. <span>Ronquillo</span></div>
+  <div class="footer-meta">Fullstack Engineer · Philippines</div>
+  <div class="footer-meta">darylron@gmail.com</div>
+</footer>
+
+<!-- ══ CHAT BUTTON ══ -->
+<button id="chat-trigger" aria-label="Open resume assistant">
+  <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 10H6v-2h12v2zm0-3H6V7h12v2z"/></svg>
+  <svg class="close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+</button>
+
+<!-- ══ CHAT PANEL ══ -->
+<div id="chat-panel">
+  <div class="chat-hdr">
+    <div class="chat-av">D</div>
+    <div>
+      <div class="chat-hdr-name">Daryl's Resume Assistant</div>
+      <div class="chat-hdr-sub">AI-Powered · Ask me anything</div>
+    </div>
+    <div class="chat-online"></div>
+  </div>
+
+  <div class="chat-msgs" id="chat-msgs"></div>
+
+  <div class="chips" id="chips">
+    <button class="chip">Current role?</button>
+    <button class="chip">Tech stack?</button>
+    <button class="chip">Google projects?</button>
+    <button class="chip">Awards?</button>
+    <button class="chip">Should I hire him?</button>
+  </div>
+
+  <div class="chat-input-row">
+    <textarea id="chat-input" placeholder="Ask about Daryl…" rows="1"></textarea>
+    <button id="chat-send">
+      <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+/* ── SCROLL REVEAL ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.reveal').forEach((el, i) => {
+  el.style.transitionDelay = (i % 5) * 0.06 + 's';
+  io.observe(el);
+});
+
+/* ── RESUME KNOWLEDGE ── */
+const RESUME = `
+You are a professional AI assistant embedded in Daryl M. Ronquillo's resume website.
+Answer questions about Daryl based only on the resume data below.
+Be concise, professional, and friendly. Refer to Daryl in the third person.
+Keep answers to 2–4 sentences unless a list clearly helps.
+If asked whether someone should hire him, give a confident, factual case based on his background.
+If something isn't in the resume, say so honestly.
+
+--- RESUME DATA ---
+NAME: Daryl M. Ronquillo
+TITLE: Fullstack Software Engineer
+LOCATION: San Fernando, Pampanga, Philippines
+EMAIL: darylron@gmail.com | PHONE: +63 926 658 4446
+TOTAL EXPERIENCE: 13+ years (May 2012 – Present)
+
+SUMMARY: Software Engineer experienced in web app development, database warehousing, data pipelining, big data ETL. Manages full project lifecycle from ideation to support. Handles millions of data records using Pandas, BigQuery, GCP. Sets up infrastructure via Terraform (IaC).
+
+TECHNOLOGIES: JavaScript, Go, Python, PHP, TypeScript, CoffeeScript, BigQuery, MySQL, PostgreSQL, Redis, Pandas, AngularJS, Django, CakePHP, Odoo/OpenERP, GCP, DigitalOcean, Docker, Terraform, Github Actions, Protobuffs, RPC, AppEngine
+
+EXPERIENCE:
+1. Hexaware Technologies — Technical Lead (Jan 2022–Present): Reviews requirements, codes/tests/debugs solutions. Generalist across UX, DevOps, programming. Stack: Python, Go, Angular, TypeScript, GCP.
+2. FPT Software Philippines — Sr Software Engineer L4 (Sept 2021–Jan 2022): R&D, dev and maintenance. Stack: Python, Jira, Android, New Relic.
+3. Concentrix — Sr Software Engineer (Jan 2020–July 2021): Google network failure reporting. GFiber SLO/KPI system. Kubernetes BorgJobs. GFiber chatbot. Stack: BigQuery, AppEngine, MySQL, Go, Python, Pandas, RPC.
+4. Willis Towers Watson — Software Engineer (Jun 2019–Dec 2019): Full-cycle IT solutions, systems architecture. Stack: Django, Docker, Jenkins.
+5. Concentrix — Software Engineer (Dec 2016–May 2019): Google network failure notifications. YouTube/network utilization forecasting. Employee org-chart on Google Maps. AppEngine error monitoring. Automated testing design. Awards: 2018 Originator's Award, 2017 Duck Tape Award. Stack: BigQuery, AppEngine, MySQL, Go, Python, Pandas, RPC.
+6. Auberon Solutions — ERP Developer (Feb 2016–Dec 2016): ERP integration. OpenERP seminar. Stack: Odoo, Python.
+7. Eastvantage — System Developer (May 2012–Dec 2015): OpenERP frontends. Dispatch dashboard. Awards: 3× Employee of the Month, 2014 Performance Awardee. Stack: OpenERP, Web Development.
+
+EDUCATION: B.S. Information Technology, Don Mariano Marcos Memorial State University, San Fernando, La Union.
+`;
+
+/* ── CHAT STATE ── */
+const trigger  = document.getElementById('chat-trigger');
+const panel    = document.getElementById('chat-panel');
+const msgsEl   = document.getElementById('chat-msgs');
+const inputEl  = document.getElementById('chat-input');
+const sendBtn  = document.getElementById('chat-send');
+const chipsEl  = document.getElementById('chips');
+
+let open = false, loading = false, greeted = false, history = [];
+
+trigger.addEventListener('click', () => {
+  open = !open;
+  trigger.classList.toggle('open', open);
+  panel.classList.toggle('open', open);
+  if (open) {
+    if (!greeted) {
+      greeted = true;
+      setTimeout(() => addMsg('bot', "Hi there! 👋 I can answer any questions about Daryl's experience, skills, and background. What would you like to know?"), 350);
+    }
+    inputEl.focus();
+  }
+});
+
+chipsEl.addEventListener('click', e => {
+  const btn = e.target.closest('.chip');
+  if (btn) { chipsEl.style.display = 'none'; send(btn.textContent.trim()); }
+});
+
+inputEl.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); if (!loading) go(); }
+});
+sendBtn.addEventListener('click', () => { if (!loading) go(); });
+inputEl.addEventListener('input', () => {
+  inputEl.style.height = 'auto';
+  inputEl.style.height = Math.min(inputEl.scrollHeight, 100) + 'px';
+});
+
+function go() {
+  const t = inputEl.value.trim();
+  if (!t) return;
+  inputEl.value = ''; inputEl.style.height = 'auto';
+  send(t);
+}
+
+function addMsg(role, text) {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg ' + (role === 'user' ? 'user' : '');
+  const av = document.createElement('div');
+  av.className = 'msg-av';
+  av.textContent = role === 'bot' ? 'D' : 'Y';
+  const bub = document.createElement('div');
+  bub.className = 'msg-bub';
+  bub.innerHTML = text
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\n/g, '<br>');
+  wrap.appendChild(av);
+  wrap.appendChild(bub);
+  msgsEl.appendChild(wrap);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+
+function showTyping() {
+  const wrap = document.createElement('div');
+  wrap.className = 'msg'; wrap.id = 'typing-ind';
+  const av = document.createElement('div'); av.className = 'msg-av'; av.textContent = 'D';
+  const bub = document.createElement('div'); bub.className = 'msg-bub';
+  bub.innerHTML = '<div class="typing-dots"><span></span><span></span><span></span></div>';
+  wrap.appendChild(av); wrap.appendChild(bub);
+  msgsEl.appendChild(wrap);
+  msgsEl.scrollTop = msgsEl.scrollHeight;
+}
+function removeTyping() {
+  const el = document.getElementById('typing-ind');
+  if (el) el.remove();
+}
+
+async function send(text) {
+  if (loading) return;
+  addMsg('user', text);
+  history.push({ role: 'user', content: text });
+  loading = true; sendBtn.disabled = true;
+  showTyping();
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: RESUME,
+        messages: history
+      })
+    });
+    const data = await res.json();
+    removeTyping();
+    if (data.error) {
+      addMsg('bot', 'Something went wrong. Please try again.');
+      history.pop();
+    } else {
+      const reply = data.content.map(b => b.text || '').join('');
+      history.push({ role: 'assistant', content: reply });
+      addMsg('bot', reply);
+    }
+  } catch {
+    removeTyping();
+    addMsg('bot', 'Connection error. Please check your network and try again.');
+    history.pop();
+  } finally {
+    loading = false; sendBtn.disabled = false; inputEl.focus();
+  }
+}
+</script>
+</body>
+</html>
