@@ -978,7 +978,7 @@ footer {
     <div class="chat-av">D</div>
     <div>
       <div class="chat-hdr-name">Daryl's Resume Assistant</div>
-      <div class="chat-hdr-sub">AI-Powered · Ask me anything</div>
+      <div class="chat-hdr-sub">Powered by Gemini · Ask me anything</div>
     </div>
     <div class="chat-online"></div>
   </div>
@@ -1044,6 +1044,10 @@ EXPERIENCE:
 
 EDUCATION: B.S. Information Technology, Don Mariano Marcos Memorial State University, San Fernando, La Union.
 `;
+
+/* ── CONFIG ── */
+const GEMINI_KEY = 'AIzaSyBzzzm36uHGekSvbg9-HCxlxY8b42OMsgY';
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
 
 /* ── CHAT STATE ── */
 const trigger  = document.getElementById('chat-trigger');
@@ -1124,33 +1128,51 @@ function removeTyping() {
 async function send(text) {
   if (loading) return;
   addMsg('user', text);
-  history.push({ role: 'user', content: text });
+  history.push({ role: 'user', parts: [{ text }] });
   loading = true; sendBtn.disabled = true;
   showTyping();
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(GEMINI_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: RESUME,
-        messages: history
+        system_instruction: {
+          role: 'system',
+          parts: [{ text: RESUME }]
+        },
+        contents: history,
+        generationConfig: {
+          maxOutputTokens: 1000,
+          temperature: 0.7
+        }
       })
     });
     const data = await res.json();
     removeTyping();
     if (data.error) {
-      addMsg('bot', 'Something went wrong. Please try again.');
+      const errMsg = data.error.message || 'Unknown error. Please try again.';
+      addMsg('bot', '⚠️ ' + errMsg);
       history.pop();
     } else {
-      const reply = data.content.map(b => b.text || '').join('');
-      history.push({ role: 'assistant', content: reply });
+      const candidate = data.candidates?.[0];
+      if (!candidate) {
+        addMsg('bot', 'No response received. Please try again.');
+        history.pop();
+        return;
+      }
+      // handle safety blocks
+      if (candidate.finishReason === 'SAFETY') {
+        addMsg('bot', 'Response blocked for safety reasons. Please rephrase your question.');
+        history.pop();
+        return;
+      }
+      const reply = candidate.content?.parts?.map(p => p.text || '').join('') || 'No response received.';
+      history.push({ role: 'model', parts: [{ text: reply }] });
       addMsg('bot', reply);
     }
-  } catch {
+  } catch (err) {
     removeTyping();
-    addMsg('bot', 'Connection error. Please check your network and try again.');
+    addMsg('bot', '⚠️ Connection error: ' + err.message);
     history.pop();
   } finally {
     loading = false; sendBtn.disabled = false; inputEl.focus();
