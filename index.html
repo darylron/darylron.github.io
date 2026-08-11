@@ -1102,11 +1102,11 @@ async function send(text) {
     });
     const data = await res.json();
     removeTyping();
-    if (data.error) {
+    if (data.statusCode !== 200) {
       addMsg('bot', 'Something went wrong. Please try again.');
       history.pop();
     } else {
-      const reply = data.content.map(b => b.text || '').join('');
+      const reply = data.reply;
       history.push({ role: 'assistant', content: reply });
       addMsg('bot', reply);
     }

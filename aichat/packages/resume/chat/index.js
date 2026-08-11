@@ -74,22 +74,20 @@ B.S. Information Technology
 Don Mariano Marcos Memorial State University — Institute of Information Technology
 San Fernando, La Union
 `;
-
 export async function main(args) {
-  const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Content-Type": "application/json"
-  };
-
-  // 1. Handle CORS Preflight
-  if (args.http?.method === "OPTIONS") {
+// Let DigitalOcean handle Access-Control-Allow-Origin automatically to prevent duplicate header crashes
+const headers = {
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Content-Type": "application/json"
+};
+  // 1. Handle CORS preflight OPTIONS request
+  const method = args.http?.method || args.method;
+  if (method === "OPTIONS" || args.__ow_method === "options") {
     return { statusCode: 204, headers };
   }
 
   try {
-    // 2. Validate API Key
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
       return {
@@ -99,22 +97,23 @@ export async function main(args) {
       };
     }
 
-    // 3. Extract Message Payload Safely
+    // 2. Extract message and history safely from the fetch body payload
     let userMessage = "";
-    let userHistory = "";
+    let userHistory = [];
+
+    let bodyData = args;
     if (typeof args.http?.body === "string") {
       try {
-        const thisArgs = JSON.parse(args.http.body);
-        userMessage = thisArgs.message;
-        userHistory = thisArgs.history;
+        bodyData = JSON.parse(args.http.body);
       } catch (e) {
-        userMessage = args.http.body;
+        bodyData = { message: args.http.body };
       }
-    } else if (args.message) {
-      userMessage = args.message;
-    } else if (args.http?.body?.message) {
-      userMessage = args.http.body.message;
+    } else if (args.http?.body && typeof args.http.body === "object") {
+      bodyData = args.http.body;
     }
+
+    userMessage = bodyData.message || args.message || "";
+    userHistory = bodyData.history || args.history || [];
 
     if (!userMessage) {
       return {
@@ -124,19 +123,29 @@ export async function main(args) {
       };
     }
 
-    // 4. Set a 25-second timeout safeguard
+    // 3. Format history for Gemini (mapping user/assistant turns)
+    let formattedHistory = "";
+    if (Array.isArray(userHistory) && userHistory.length > 0) {
+      formattedHistory = userHistory.map(h => `${h.role === 'user' ? 'User' : 'Assistant'}: ${h.text || h.parts?.[0]?.text || ''}`).join("\n");
+      formattedHistory = `Conversation History:\n${formattedHistory}\n\n`;
+    }
+
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 25000);
 
-    // 5. Call Gemini directly via REST API using the stable gemini-3.5-flash model
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
     
+    const promptText = `You are an AI assistant representing a candidate's resume. Answer accurately based ONLY on this context and the conversation history below.
+
+Resume Data:
+${RESUME_DATA}
+
+${formattedHistory}Current User Question: ${userMessage}`;
+
     const requestPayload = {
       contents: [{
         role: "user",
-        parts: [{ 
-          text: `You are an AI assistant representing a candidate's resume. Answer accurately based ONLY on this context:\n\nResume Data:\n${RESUME_DATA}\n\nHistory: ${userHistory}\n\nQuestion: ${userMessage}` 
-        }]
+        parts: [{ text: promptText }]
       }]
     };
 
