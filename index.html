@@ -1103,7 +1103,7 @@ async function send(text) {
     const data = await res.json();
     removeTyping();
     if (!('reply' in data)) {
-      addMsg('bot', 'Something went wrong. Please try again.');
+      addMsg('bot', 'It seems that the free Gemini quota exceeded, sorry! 😢');
       history.pop();
     } else {
       const reply = data.reply;
