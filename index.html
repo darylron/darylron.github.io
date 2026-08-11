@@ -1102,7 +1102,7 @@ async function send(text) {
     });
     const data = await res.json();
     removeTyping();
-    if (data.statusCode !== 200) {
+    if (!('reply' in data)) {
       addMsg('bot', 'Something went wrong. Please try again.');
       history.pop();
     } else {

@@ -5,8 +5,8 @@
     "packageVersions": {},
     "actionVersions": {
       "resume/chat": {
-        "digest": "9b2e7b4ffeaf222a01349ac8c98ae91def0451a2e99998770b8c6b089b750d4d",
-        "version": "0.0.36"
+        "digest": "20d7721da72642ca7c048254bee0cc3f2d055d236df54152f0d8a104300c5ae7",
+        "version": "0.0.37"
       }
     }
   }
