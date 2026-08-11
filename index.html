@@ -693,7 +693,7 @@ footer {
         Daryl M.<br><span>Ronquillo</span>
       </h1>
       <p class="hero-tagline">
-        13+ years building scalable web applications, data pipelines, and cloud infrastructure — across Concentrix,Willis Towers Watson, Hexaware, and more.
+        13+ years building scalable web applications, data pipelines, and cloud infrastructure — across Concentrix, Willis Towers Watson, Hexaware, and more.
       </p>
       <div class="hero-pills">
         <a class="hero-pill" href="tel:+639266584446">
@@ -966,11 +966,11 @@ footer {
   <div class="footer-meta">darylron@gmail.com</div>
 </footer>
 
-<!-- ══ CHAT BUTTON ══
+<!-- ══ CHAT BUTTON ══ -->
 <button id="chat-trigger" aria-label="Open resume assistant">
   <svg class="chat-icon" viewBox="0 0 24 24"><path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 10H6v-2h12v2zm0-3H6V7h12v2z"/></svg>
   <svg class="close-icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-</button> -->
+</button>
 
 <!-- ══ CHAT PANEL ══ -->
 <div id="chat-panel">
@@ -978,7 +978,7 @@ footer {
     <div class="chat-av">D</div>
     <div>
       <div class="chat-hdr-name">Daryl's Resume Assistant</div>
-      <div class="chat-hdr-sub">Powered by Gemini · Ask me anything</div>
+      <div class="chat-hdr-sub">AI-Powered · Ask me anything</div>
     </div>
     <div class="chat-online"></div>
   </div>
@@ -1013,43 +1013,6 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   io.observe(el);
 });
 
-/* ── RESUME KNOWLEDGE ── */
-const RESUME = `
-You are a professional AI assistant embedded in Daryl M. Ronquillo's resume website.
-Answer questions about Daryl based only on the resume data below.
-Be concise, professional, and friendly. Refer to Daryl in the third person.
-Keep answers to 2–4 sentences unless a list clearly helps.
-If asked whether someone should hire him, give a confident, factual case based on his background.
-If something isn't in the resume, say so honestly.
-
---- RESUME DATA ---
-NAME: Daryl M. Ronquillo
-TITLE: Fullstack Software Engineer
-LOCATION: San Fernando, Pampanga, Philippines
-EMAIL: darylron@gmail.com | PHONE: +63 926 658 4446
-TOTAL EXPERIENCE: 13+ years (May 2012 – Present)
-
-SUMMARY: Software Engineer experienced in web app development, database warehousing, data pipelining, big data ETL. Manages full project lifecycle from ideation to support. Handles millions of data records using Pandas, BigQuery, GCP. Sets up infrastructure via Terraform (IaC).
-
-TECHNOLOGIES: JavaScript, Go, Python, PHP, TypeScript, CoffeeScript, BigQuery, MySQL, PostgreSQL, Redis, Pandas, AngularJS, Django, CakePHP, Odoo/OpenERP, GCP, DigitalOcean, Docker, Terraform, Github Actions, Protobuffs, RPC, AppEngine
-
-EXPERIENCE:
-1. Hexaware Technologies — Technical Lead (Jan 2022–Present): Reviews requirements, codes/tests/debugs solutions. Generalist across UX, DevOps, programming. Stack: Python, Go, Angular, TypeScript, GCP.
-2. FPT Software Philippines — Sr Software Engineer L4 (Sept 2021–Jan 2022): R&D, dev and maintenance. Stack: Python, Jira, Android, New Relic.
-3. Concentrix — Sr Software Engineer (Jan 2020–July 2021): Google network failure reporting. GFiber SLO/KPI system. Kubernetes BorgJobs. GFiber chatbot. Stack: BigQuery, AppEngine, MySQL, Go, Python, Pandas, RPC.
-4. Willis Towers Watson — Software Engineer (Jun 2019–Dec 2019): Full-cycle IT solutions, systems architecture. Stack: Django, Docker, Jenkins.
-5. Concentrix — Software Engineer (Dec 2016–May 2019): Google network failure notifications. YouTube/network utilization forecasting. Employee org-chart on Google Maps. AppEngine error monitoring. Automated testing design. Awards: 2018 Originator's Award, 2017 Duck Tape Award. Stack: BigQuery, AppEngine, MySQL, Go, Python, Pandas, RPC.
-6. Auberon Solutions — ERP Developer (Feb 2016–Dec 2016): ERP integration. OpenERP seminar. Stack: Odoo, Python.
-7. Eastvantage — System Developer (May 2012–Dec 2015): OpenERP frontends. Dispatch dashboard. Awards: 3× Employee of the Month, 2014 Performance Awardee. Stack: OpenERP, Web Development.
-
-EDUCATION: B.S. Information Technology, Don Mariano Marcos Memorial State University, San Fernando, La Union.
-`;
-
-/* ── CONFIG ── */
-const GEMINI_KEY = 'AIzaSyBzzzm36uHGekSvbg9-HCxlxY8b42OMsgY';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${GEMINI_KEY}`;
-
-/* ── CHAT STATE ── */
 const trigger  = document.getElementById('chat-trigger');
 const panel    = document.getElementById('chat-panel');
 const msgsEl   = document.getElementById('chat-msgs');
@@ -1128,51 +1091,28 @@ function removeTyping() {
 async function send(text) {
   if (loading) return;
   addMsg('user', text);
-  history.push({ role: 'user', parts: [{ text }] });
+  history.push({ role: 'user', content: text });
   loading = true; sendBtn.disabled = true;
   showTyping();
   try {
-    const res = await fetch(GEMINI_URL, {
+    const res = await fetch('https://faas-sgp1-18bc02ac.doserverless.co/api/v1/web/fn-c66f5270-a0de-4b2a-b1f4-4ffccabe914c/resume/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        system_instruction: {
-          role: 'system',
-          parts: [{ text: RESUME }]
-        },
-        contents: history,
-        generationConfig: {
-          maxOutputTokens: 1000,
-          temperature: 0.7
-        }
-      })
+      body: JSON.stringify({"message": text, "history": history})
     });
     const data = await res.json();
     removeTyping();
     if (data.error) {
-      const errMsg = data.error.message || 'Unknown error. Please try again.';
-      addMsg('bot', '⚠️ ' + errMsg);
+      addMsg('bot', 'Something went wrong. Please try again.');
       history.pop();
     } else {
-      const candidate = data.candidates?.[0];
-      if (!candidate) {
-        addMsg('bot', 'No response received. Please try again.');
-        history.pop();
-        return;
-      }
-      // handle safety blocks
-      if (candidate.finishReason === 'SAFETY') {
-        addMsg('bot', 'Response blocked for safety reasons. Please rephrase your question.');
-        history.pop();
-        return;
-      }
-      const reply = candidate.content?.parts?.map(p => p.text || '').join('') || 'No response received.';
-      history.push({ role: 'model', parts: [{ text: reply }] });
+      const reply = data.content.map(b => b.text || '').join('');
+      history.push({ role: 'assistant', content: reply });
       addMsg('bot', reply);
     }
-  } catch (err) {
+  } catch {
     removeTyping();
-    addMsg('bot', '⚠️ Connection error: ' + err.message);
+    addMsg('bot', 'Connection error. Please check your network and try again.');
     history.pop();
   } finally {
     loading = false; sendBtn.disabled = false; inputEl.focus();

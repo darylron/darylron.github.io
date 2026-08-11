@@ -1,0 +1,8 @@
+packages:
+  - name: resume
+    environment:
+      GEMINI_API_KEY: "${GEMINI_API_KEY}"
+    functions:
+      - name: chat
+        runtime: nodejs:22
+        web: true
